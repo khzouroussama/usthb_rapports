@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>tp1.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7c4dff; font-style: italic;}
+.s1 { color: #90a4ae;}
+.s2 { color: #39adb5;}
+.s3 { color: #f76d47;}
+.s4 { color: #91b859;}
+.s5 { color: #aabfc9; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#fafafa">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+tp1.sql</font>
+</center></td></tr></table>
+<pre><span class="s0">CREATE TABLE Client</span><span class="s2">(</span>
+  <span class="s1">numClient     </span><span class="s0">INTEGER</span><span class="s2">,</span>
+  <span class="s1">Civ           </span><span class="s0">VARCHAR2</span><span class="s2">(</span><span class="s3">5</span><span class="s2">),</span>
+  <span class="s1">prenomClient  </span><span class="s0">VARCHAR2</span><span class="s2">(</span><span class="s3">100</span><span class="s2">),</span>
+  <span class="s1">nomClient     </span><span class="s0">VARCHAR2</span><span class="s2">(</span><span class="s3">100</span><span class="s2">),</span>
+  <span class="s1">dateNaissance </span><span class="s0">DATE</span><span class="s2">,</span>
+  <span class="s1">adresse       </span><span class="s0">VARCHAR2</span><span class="s2">(</span><span class="s3">200</span><span class="s2">),</span>
+  <span class="s1">telProf       </span><span class="s0">VARCHAR2</span><span class="s2">(</span><span class="s3">100</span><span class="s2">),</span>
+  <span class="s1">telPriv       </span><span class="s0">VARCHAR2</span><span class="s2">(</span><span class="s3">100</span><span class="s2">),</span>
+  <span class="s1">fax           </span><span class="s0">VARCHAR2</span><span class="s2">(</span><span class="s3">100</span><span class="s2">),</span>
+  <span class="s0">CONSTRAINT </span><span class="s1">PK_Client </span><span class="s0">PRIMARY KEY </span><span class="s2">(</span><span class="s1">numClient</span><span class="s2">),</span>
+  <span class="s0">CONSTRAINT </span><span class="s1">CK_Civ </span><span class="s0">CHECK </span><span class="s2">(</span><span class="s1">Civ </span><span class="s0">in </span><span class="s2">(</span><span class="s4">'M'</span><span class="s2">, </span><span class="s4">'Mle'</span><span class="s2">, </span><span class="s4">'Mme'</span><span class="s2">))</span>
+);</pre>
+</body>
+</html>

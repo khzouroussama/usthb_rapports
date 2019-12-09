@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>tp1.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7c4dff; font-style: italic;}
+.s1 { color: #90a4ae;}
+.s2 { color: #39adb5;}
+.s3 { color: #aabfc9; font-style: italic;}
+.s4 { color: #f76d47;}
+.s5 { color: #91b859;}
+</style>
+</head>
+<body bgcolor="#fafafa">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+tp1.sql</font>
+</center></td></tr></table>
+<pre><span class="s0">CREATE TABLE </span><span class="s1">Intervenants</span><span class="s2">(</span>
+  <span class="s1">numIntervention </span><span class="s0">INTEGER</span><span class="s2">,</span>
+  <span class="s1">numEmploye      </span><span class="s0">INTEGER</span><span class="s2">,</span>
+  <span class="s1">dateDebut       </span><span class="s0">DATE</span><span class="s2">,</span>
+  <span class="s1">dateFin         </span><span class="s0">DATE</span><span class="s2">,</span>
+  <span class="s0">CONSTRAINT </span><span class="s1">PK_Intervenants</span>
+    <span class="s0">PRIMARY KEY </span><span class="s2">(</span><span class="s1">numIntervention</span><span class="s2">, </span><span class="s1">numEmploye</span><span class="s2">),</span>
+  <span class="s0">CONSTRAINT </span><span class="s1">FK_Intervenants</span>
+    <span class="s0">FOREIGN KEY </span><span class="s2">(</span><span class="s1">numIntervention</span><span class="s2">)</span>
+    <span class="s0">REFERENCES </span><span class="s1">Interventions </span><span class="s2">(</span><span class="s1">numIntervention</span><span class="s2">)</span>
+      <span class="s0">ON DELETE CASCADE</span><span class="s2">,</span>
+  <span class="s0">CONSTRAINT </span><span class="s1">FK_Intervenant </span><span class="s0">FOREIGN KEY </span><span class="s2">(</span><span class="s1">numEmploye</span><span class="s2">)</span>
+    <span class="s0">REFERENCES </span><span class="s1">Employe </span><span class="s2">(</span><span class="s1">numEmploye</span><span class="s2">)</span>
+      <span class="s0">ON DELETE CASCADE</span>
+<span class="s2">);</span></pre>
+</body>
+</html>
