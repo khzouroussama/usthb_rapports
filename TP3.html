@@ -1,10 +1,1298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1.0" name="viewport"/>
+    <title>Rapport de TP ASGBD</title>
+
+    <!-- CSS  -->
+
+    <!-- CSS  -->
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+    <link href="css/style.css" media="screen,projection" rel="stylesheet" type="text/css"/>
+
+
 </head>
 <body>
+<a name="debut"></a>
+<nav class="blue-grey lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+        <a class="brand-logo waves-effect waves-light" href="index.html" id="logo-container">Rapport</a>
+        <ul class="right hide-on-med-and-down">
+            <li class="waves-effect"><a href="TP1.html">TP 1</a></li>
+            <li class="waves-effect"><a href="TP2.html">TP 2</a></li>
+            <li class="waves-effect"><a href="TP3.html">TP 3</a></li>
+            <li class="waves-effect"><a href="TP4.html">TP 4</a></li>
+            <li class="waves-effect"><a href="TP5.html">TP 5</a></li>
+        </ul>
+
+        <ul class="sidenav" id="nav-mobile">
+
+            <li><a href="TP1.html">TP 1</a></li>
+            <li><a href="TP2.html">TP 2</a></li>
+            <li><a href="TP3.html">TP 3</a></li>
+            <li><a href="TP4.html">TP 4</a></li>
+            <li><a href="TP5.html">TP 5</a></li>
+        </ul>
+        <a class="sidenav-trigger" data-target="nav-mobile" href="#"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <br>
+        <h2 class="header center teal-text">TP 3</h2>
+        <h5 class="header center light">Dictionnaire </h5>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="section">
+        <div >
+            <nav class="grey lighten-1" role="doc-index">
+                <div class="nav-wrapper">
+                    <ul class="right hide-on-med-and-down center-block">
+                        <li class="waves-effect"><a href="#q1">1</a></li>
+                        <li class="waves-effect"><a href="#q2">2</a></li>
+                        <li class="waves-effect"><a href="#q3">3</a></li>
+                        <li class="waves-effect"><a href="#q4">4</a></li>
+                        <li class="waves-effect"><a href="#q5">5</a></li>
+                        <li class="waves-effect"><a href="#q6">6</a></li>
+                        <li class="waves-effect"><a href="#q7">7</a></li>
+                        <li class="waves-effect"><a href="#q8">8</a></li>
+                        <li class="waves-effect"><a href="#q9">9</a></li>
+                        <li class="waves-effect"><a href="#q10">10</a></li>
+                        <li class="waves-effect"><a href="#q11">11</a></li>
+                        <li class="waves-effect"><a href="#q12">12</a></li>
+                        <li class="waves-effect"><a href="#q13">13</a></li>
+                        <li class="waves-effect"><a href="#q14">14</a></li>
+                        <li class="waves-effect"><a href="#q15">15</a></li>
+                        <li class="waves-effect"><a href="#q16">16</a></li>
+                 
+                    </ul>
+
+
+                    <ul class="sidenav" id="nav-mobile2">
+                        <li class="teal-text"><h6>Liste des Questions</h6></li>
+                        <li><a href="#q1">q1</a></li>
+                        <li><a href="#q2">q2</a></li>
+                        <li><a href="#q3">q3</a></li>
+                        <li><a href="#q4">q4</a></li>
+                        <li><a href="#q5">q5</a></li>
+                        <li><a href="#q6">q6</a></li>
+                        <li><a href="#q7">q7</a></li>
+                        <li><a href="#q8">q8</a></li>
+                        <li><a href="#q9">q9</a></li>
+                        <li><a href="#q10">q10</a></li>
+                        <li><a href="#q11">q11</a></li>
+                        <li><a href="#q12">q12</a></li>
+                        <li><a href="#q13">q13</a></li>
+                        <li><a href="#q14">q14</a></li>
+                        <li><a href="#q15">q15</a></li>
+                        <li><a href="#q16">q16</a></li>
+                    </ul>
+                    <a class="sidenav-trigger" data-target="nav-mobile2" href="#"><i class="material-icons">menu</i></a>
+
+                </div>
+            </nav>
+        </div>
+        <br>
+        <!--========================((DEBUT_MUL_CARD))=========================== -->
+
+        <!-- OUTILE de RAPPORT -->
+        <a name="q1"></a>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card">
+                    <div class="card-content ">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <span class="card-title teal-text">Question N : 1</span>
+                                <!--le question-->
+                                <br>
+                                <br>
+                                <p>1-Lister le catalogue  <b>« DICT »</b></p>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q1/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 100px"></iframe>	
+                                <p>Cette requête donne un résultat de plus de 1000 lignes, voici donc une petite partie du résultat </p>
+
+                            </div>
+
+                            <div class="col s12 m6">
+                                <br><br>
+                                <br><br><br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q1.PNG"
+                                     style="height:190px ;border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q1_1/tp3.sql.html"	
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 100px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q1_1.PNG"
+                                     style="border: 2px solid #eeeeee">
+                            </div>
+                        </div>
+
+
+                        <!---------------->
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>3-la structure de catalogue  <b> « DICT »</b></p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q1_2/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 100px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q1_1.PNG"
+                                     style="border: 2px solid #eeeeee">
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>    
+
+            <!--========================((FIN_CARD))=========================== -->
+
+            <!--========================((DEBUT_MUL_CARD))=========================== -->
+
+        <!-- OUTILE de RAPPORT -->
+        <a name="q2"></a>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card">
+                    <div class="card-content ">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <span class="card-title teal-text">Question N : 2</span>
+                                <!--le question-->
+                                <h6 class="text-accent-3">Rôles et structures des tables et vues :</h6>
+                                <br>
+                                <br>
+                                <p>1-le rôle et la structure de la table  <b>« ALL_TAB_COLUMNS »</b></p>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q2/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 100px"></iframe>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <br><br>
+                                <br><br><br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q2_1_1.PNG"
+                                     style="border: 2px solid #eeeeee">
+                            </div>
+                        </div>
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>2-le rôle et la structure de la table  <b>« USER_USERS »</b></p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q2_1/tp3.sql.html"	
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 100px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q2_2.PNG"
+                                     style="border: 2px solid #eeeeee">
+                            </div>
+                        </div>
+
+
+                        <!---------------->
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>3-le rôle et la structure de la table  <b> « ALL_CONSTRAINTS »</b></p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q2_2/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 100px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q2_3.PNG"
+                                     style="border: 2px solid #eeeeee">
+                            </div>
+                        </div>
+                        <!---------------->
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>3-le rôle et la structure de la table  <b> « USER_TAB_PRIVS »</b></p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q2_3/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 100px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q2_4.PNG"
+                                     style="border: 2px solid #eeeeee">
+         
+                            </div>
+                        </div>
+	
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!--========================((FIN_CARD))=========================== -->
+           
+        <!--========================((DEBUT_CARD))=========================== -->
+                 <!--====================((H))======================= -->
+        <!-- OUTILE de RAPPORT -->
+        <a name="q3"></a>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row">
+                        	<span class="card-title teal-text">Question N : 3</span>
+                                 <br>
+                                <p>le nom d’utilisateur avec lequel je suis connecté.</p>
+                           
+                            <div class="col s12 m6">
+                                
+                               
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q3/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 100px"></iframe>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img" src="screenshots/TP3/q3.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--========================((FIN_CARD))=========================== -->
+        <!--========================((DEBUT_MUL_CARD))=========================== -->
+
+        <!-- OUTILE de RAPPORT -->
+        <a name="q4"></a>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card">
+                    <div class="card-content ">
+                        <div class="row">
+                        	 <span class="card-title teal-text">Question N : 4</span>
+                                <!--le question-->
+                                <h6 class="text-accent-3">Comparer la structure et le contenu des tables ALL_TAB_COLUMNS et USER_ TAB_COLUMNS :</h6>
+                            	 <br>
+                                 <p class="teal-text">Resultat:</p>
+                            <div class="col s12 m6">
+                               
+                               
+                                <br><br>
+                                
+                               
+                                <img class="responsive-img center-block" src="screenshots/TP3/q4_1.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                
+                            </div>
+
+                            <div class="col s12 m6">
+                                <br><br>
+                                
+                                <img class="responsive-img center-block" src="screenshots/TP3/q4.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!--========================((FIN_CARD))=========================== -->
+     
+       <!--========================((DEBUT_MUL_CARD))=========================== -->
+
+        <!-- OUTILE de RAPPORT -->
+        <a name="q5"></a>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card">
+                    <div class="card-content ">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <span class="card-title teal-text">Question N : 5</span>
+                                <!--le question-->
+                                <h6 class="text-accent-3">Vérifions que les tables du TP1 ont été créées</h6>
+                                <br>
+                                <br>
+                                <p>1-afficher les tableau de <b> TP01</b> </p>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q5/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 200px"></iframe>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <br><br>
+                                <br><br><br>
+                                <p class="teal-text">Resultat:</p>
+                                
+                                <img class="responsive-img center-block" src="screenshots/TP3/q5.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>2-toutes les informations sur les tables de<b> TP01</b></p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q5_1/tp3.sql.html"	
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 100px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q5_1.PNG"
+                                     style="border: 2px solid #eeeeee">
+                            </div>
+                        </div>
+
+	
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!--========================((FIN_CARD))=========================== -->
+              <!--========================((DEBUT_MUL_CARD))=========================== -->
+
+        <!-- OUTILE de RAPPORT -->
+        <a name="q6"></a>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card">
+                    <div class="card-content ">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <span class="card-title teal-text">Question N : 6</span>
+                                <!--le question-->
+                                <h6 class="text-accent-3">La List des  table  de l’utilisateur</h6>
+                                <br>
+                                <br>
+                                <p>1-<b> « system »</b> </p>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q6/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                                <br>
+                                <br>
+                                <p>" On ne pouvons pas mettre tous les résultats donc on a pris juste une partie du résultat"</p>        
+                            </div>
+
+                            <div class="col s12 m6">
+                                <br><br>
+                                <br><br><br>
+                                <p class="teal-text">Resultat:</p>
+                                
+                                <img class="responsive-img center-block" src="screenshots/TP3/q6.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>2-<b>« DBAINTERVENTION »</b></p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q6_1/tp3.sql.html"	
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q6_1.PNG"
+                                     style="border: 2px solid #eeeeee">
+                            </div>
+                        </div>
+
+	
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!--========================((FIN_CARD))=========================== -->
+                   <!--========================((DEBUT_MUL_CARD))=========================== -->
+
+        <!-- OUTILE de RAPPORT -->
+        <a name="q7"></a>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card">
+                    <div class="card-content ">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <span class="card-title teal-text">Question N : 7</span>
+                                <!--le question-->
+                                <h6 class="text-accent-3">La description des attributs de table :</h6>
+                                <br>
+                                <br>
+                                <p>1-<b> « INTERVENTIONS »</b> </p>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q7/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                                <br>
+                                <br>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <br><br><br>
+                                <br><br><br>
+                                <p class="teal-text">Resultat:</p>
+                                
+                                <img class="responsive-img center-block" src="screenshots/TP3/q7.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>2-<b>« VEHICULE »</b></p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q7_1/tp3.sql.html"	
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                            	<br>
+                            	<br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q7_1.PNG"
+                                     style="border: 2px solid #eeeeee">
+                            </div>
+                        </div>
+
+	
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!--========================((FIN_CARD))=========================== -->
+             <!--========================((DEBUT_CARD))=========================== -->
+                 <!--====================((H))======================= -->
+        <!-- OUTILE de RAPPORT -->
+        <a name="q8"></a>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row">
+                        	<span class="card-title teal-text">Question N : 8</span>
+                                 <br>
+                                <p>On affiche les contraintes de la table « INTERVENTIONS» .</p>
+                           
+                            <div class="col s12 m6">
+                                
+                               
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q8/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img" src="screenshots/TP3/q8.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--========================((FIN_CARD))=========================== -->
+                   <!--====================((H))======================= -->
+        <!-- OUTILE de RAPPORT -->
+        <a name="q9"></a>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row">
+                        	<span class="card-title teal-text">Question N : 9</span>
+                                 <br>
+                                <p>Toutes les contraintes de TP01 .</p>
+                           
+                            <div class="col s12 m6">
+                                
+                               
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q9/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img" src="screenshots/TP3/q9.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--========================((FIN_CARD))=========================== -->
+                     <!--========================((DEBUT_MUL_CARD))=========================== -->
+
+        <!-- OUTILE de RAPPORT -->
+        <a name="q10"></a>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card">
+                    <div class="card-content ">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <span class="card-title teal-text">Question N : 10</span>
+                                <!--le question-->
+                                <h6 class="text-accent-3">toutes les informations permettant de recréer la table  <b>   «INTERVENTIONS »</b></h6>
+                                <br>
+                                <br>
+                                <p>1- Les attributs  </p>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q10/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                                <br>
+                                <br>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <br><br><br>
+                                <br><br><br>
+                                <p class="teal-text">Resultat:</p>
+                                
+                                <img class="responsive-img center-block" src="screenshots/TP3/q10.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>2-Les contraintes </p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q10_1/tp3.sql.html"	
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                            	<br>
+                            	<br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q10_1.PNG"
+                                     style="border: 2px solid #eeeeee">
+                            </div>
+                        </div>
+
+	
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!--========================((FIN_CARD))=========================== -->
+              <!--========================((DEBUT_MUL_CARD))=========================== -->
+
+        <!-- OUTILE de RAPPORT -->
+        <a name="q11"></a>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card">
+                    <div class="card-content ">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <span class="card-title teal-text">Question N : 11</span>
+                                <!--le question-->
+                                <h6 class="text-accent-3">Tous les privilèges accordés à  <b> « ADMIN »</b></h6>
+                                <br>
+                                <br>
+                                <p>1-si on n’est pas connecté avec   <b> « ADMIN »</b> </p>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q11/TP3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 100px"></iframe>
+                                <br>
+                                <br>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <br><br><br>
+                                <br><br><br>
+                                <p class="teal-text">Resultat:</p>
+                                
+                                <img class="responsive-img center-block" src="screenshots/TP3/q11.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>2- si on est connecté en tant que <b> « ADMIN »</b> </p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q11_1/TP3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 100px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                            	<br>
+                            	<br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q11_1.PNG"
+                                     style="border: 2px solid #eeeeee">
+                            </div>
+                        </div>
+
+	
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!--========================((FIN_CARD))=========================== -->
+        <!-- OUTILE de RAPPORT -->
+        <a name="q12"></a>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row">
+                        	<span class="card-title teal-text">Question N : 12</span>
+                                 <br>
+                                <p>Tout les rôles donnés à l’utilisateur<b> « ADMIN »</b> .</p>
+                           
+                            <div class="col s12 m6">
+                                
+                               
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q12/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 100px"></iframe>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img" src="screenshots/TP3/q12.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--========================((FIN_CARD))=========================== -->
+
+              <!--========================((DEBUT_MUL_CARD))=========================== -->
+
+        <!-- OUTILE de RAPPORT -->
+        <a name="q13"></a>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card">
+                    <div class="card-content ">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <span class="card-title teal-text">Question N : 13</span>
+                                <!--le question-->
+                                <h6 class="text-accent-3">Tous les objets accordés à  <b> « ADMIN »</b></h6>
+                                <br>
+                                <br>
+                                <p>1-si on n’est pas connecté avec   <b> « ADMIN »</b> </p>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q13_1/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 100px"></iframe>
+                                <br>
+                                <br>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <br><br><br>
+                                <br><br><br>
+                                <p class="teal-text">Resultat:</p>
+                                
+                                <img class="responsive-img center-block" src="screenshots/TP3/q13.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>2- si on est connecté en tant que <b> « ADMIN »</b> </p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q13/tp3.sql.html"	
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 130px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                            	<br>
+                            	<br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q13_1.PNG"
+                                     style="border: 2px solid #eeeeee">
+                            </div>
+                        </div>
+
+	
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!--========================((FIN_CARD))=========================== -->
+        <!-- OUTILE de RAPPORT -->
+        <a name="q14"></a>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row">
+                        	<span class="card-title teal-text">Question N : 14</span>
+                                 <br>
+                                <p>le propriétaire de la table <b>   «INTERVENTIONS »</b> .</p>
+                           
+                            <div class="col s12 m6">
+                                
+                               
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q14/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img" src="screenshots/TP3/q14.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--========================((FIN_CARD))=========================== -->
+<!-- OUTILE de RAPPORT -->
+        <a name="q15"></a>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row">
+                        	<span class="card-title teal-text">Question N : 15</span>
+                                 <br>
+                                <p>Tout les rôles donnés à l’utilisateur<b> « ADMIN »</b> .</p>
+                           
+                            <div class="col s12 m6">
+                                
+                               
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q15/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img" src="screenshots/TP3/q15.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--========================((FIN_CARD))=========================== -->
+         <!-- OUTILE de RAPPORT -->
+        <a name="q16"></a>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card">
+                    <div class="card-content ">
+                        <div class="row">
+                        	<span class="card-title teal-text">Question N : 16</span>
+                                <!--le question-->
+                                <h6 class="text-accent-3">Vérifier l’effet produit par chacune des commandes de définition de données du TP1 sur le dictionnaire</h6>
+                            <div class="col s12 m6">
+                                
+                                <br>
+                                <br>
+                                <p>1-La creation de table space :</p>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q16/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 200px"></iframe>
+                                <br>
+                                <br>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <br><br><br>
+                             
+                                <p class="teal-text">Resultat:</p>
+                                
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16.PNG"
+                                     style="height:130px; border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                        <div class="divider"></div><br>
+                         <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>2-La creation d'un utilisateur </p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q16_1/tp3.sql.html"	
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                            	<br>
+                            	<br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_1.PNG"
+                                     style="height:130px;border: 2px solid #eeeeee">
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>Vérifions de la creation d'un utilisateur </p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q16_1_1/tp3.sql.html"	
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                            	<br>
+                            	<br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_1_1.PNG"
+                                     style="height:130px;border: 2px solid #eeeeee">
+                            </div>
+                        </div>
+
+
+                         <div class="divider"></div><br>
+                          <div class="divider"></div><br>
+                   
+                         <div class="row">
+                        	<p> 2 </p>
+                            <div class="col s12 m6">
+                                
+                                <br>
+                                <p>A- Vérifions ce qu’il y a dans le dictionnaire avant de créer les tables</p>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q16_2/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <br><br>
+                                
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_2.PNG"
+                                     style="border: 2px solid #eeeeee">
+                              
+                            </div>
+                        </div>
+                        <div class="divider"></div><br>
+                        <div class="row">
+                        	<pre>  B-La creation des relation  </pre>
+                            <div class="col s12 m6">
+                                
+                                <br>
+                                <p>1-Création de la relation <b>‘CLIENT’</b></p>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP1/q4/tp1.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 270px"></iframe>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <br><br>
+                                
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_3_1.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                <p class="center">Vérification de la création de relation CLIENT.</p>
+                            </div>
+                        </div>
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>2-Création de la relation <b>‘EMPLOYE’</b></p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP1/q4_1/tp1.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 250px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                            	<br><br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_3_1.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                <p class="center">Vérification de la création de la relations EMPLOYE.</p>
+                            </div>
+                        </div>
+
+
+                        <!---------------->
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>3-Création de la relation <b>‘MARQUE’</b></p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP1/q4_3/tp1.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 200px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                            	<br><br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_3_2.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                <p class="center">Vérification de la création de la relations MARQUE.</p>
+                            </div>
+                        </div>
+
+                        <!---------------->
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>4-Création de la relation <b>‘MODELE’</b></p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP1/q4_5/tp1.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 200px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                            	<br><br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_3_3.PNG"
+
+
+                                     style="border: 2px solid #eeeeee">
+                                <p class="center">Vérification de la création de la relations MODELE.</p>
+                            </div>
+                        </div>
+
+                        <!---------------->
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>5-Création de la relation <b>‘VEHICULE’</b></p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP1/q4_2/tp1.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 250px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                            	<br><br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_3_4.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                <p class="center">Vérification de la création de la relations VEHICULE.</p>
+                            </div>
+                        </div>
+
+                        <!---------------->
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>6-Création de la relation <b>‘INTERVENTIONS’</b></p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP1/q4_6/tp1.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 250px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                            	<br><br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_3_5.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                <p class="center">Vérification de la création de la relations INTERVENTIONS.</p>
+                            </div>
+                        </div>
+
+                        <!---------------->
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>7-Création de la relation <b>‘INTERVENANTS’</b></p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP1/q4_7/tp1.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 300px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                            	<br><br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_3_6.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                <p class="center">Vérification de la création de la relations INTERVENANTS.</p>
+                            </div>
+                        </div>
+                         <div class="divider"></div><br>
+                      	 <p>A- Vérifions ce qu’il y a dans le dictionnaire apres la créer les tables</p>
+                         <div class="row">
+                            <div class="col s12 m6">
+                                
+                                <br>
+                                
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q16_2_1/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 100px"></iframe>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <br>
+                                
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_2_1.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                        <div class="divider"></div><br>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                
+                                <br>
+                                
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q16_2_2/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 100px"></iframe>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <br>
+                                
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_2_2.PNG"
+                                     style="border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                        <div class="divider"></div><br><div class="row">
+                            <div class="col s12 m6">
+                                
+                                <br>
+                                
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q16_2_3/tp3.sql.html"
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <br>
+                                
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_2_3.PNG"
+                                     style="height: 250px;border: 2px solid #eeeeee">
+                                
+                            </div>
+                        </div>
+                        <div class="divider"></div><br>	
+                        <div class="divider"></div><br>
+                      
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>4-Vérifions l’effet de la requête « Alter » sur le dictionnaire : </p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q16_4/tp3.sql.html"	
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                            	<br>
+                            	<br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_4.PNG"
+                                     style="height:130px;border: 2px solid #eeeeee">
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>Vérifions maintenant le contenu du dictionnaire  </p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q16_4_1/tp3.sql.html"	
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                            	<br>
+                            	<br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_4_1.PNG"
+                                     style="height:200px;border: 2px solid #eeeeee">
+                            </div>
+                        </div>
+
+
+                         <div class="divider"></div><br>
+                          <div class="divider"></div><br>
+                           <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>4-Vérifions l’effet de l’ajout d’une contrainte sur le dictionnaire : </p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q16_4_2/tp3.sql.html"	
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 150px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                            	<br>
+                            	<br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_4_2.PNG"
+                                     style="height:100px;border: 2px solid #eeeeee">
+                                     
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="col s12 m6">
+                                <!--le question-->
+                                <p>Vérifions maintenant le contenu du dictionnaire   </p>
+                                <br>
+                                <p class="teal-text"> code :</p>
+                                <iframe src="Sql_snippests/TP3/q16_4_3/tp3.sql.html"	
+                                        style="width: 100%;border: 2px solid #eeeeee;height: 100px"></iframe>
+                            </div>
+                            <div class="col s12 m6">
+                            	<br>
+                            	<br>
+                                <p class="teal-text">Resultat:</p>
+                                <img class="responsive-img center-block" src="screenshots/TP3/q16_4_3.PNG"
+                                     style="height:200px;border: 2px solid #eeeeee">
+                            </div>
+                        </div>
+	
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                          
+
+
+
+    </div> 
+</div>
+
+<footer class="page-footer blue-grey lighten-3">
+    <div class="container">
+        <div class="row">
+            <div class="col l5 s12">
+                <h5 class="white-text">Rapport de TP</h5>
+                <p class="grey-text text-lighten-4">Université des Sciences et de la Technologie Houari Boumediene</p>
+                <p class="grey-text text-lighten-4">Faculté d'Electronique et d'Informatique</p>
+                <p class="grey-text text-lighten-4"> Département d'Informatique</p>
+                <p class="grey-text text-lighten-4"> 2019/2020</p>
+
+
+
+            </div>
+            <div class="col l4 s12">
+                <h5 class="white-text">TPs</h5>
+                <ul>
+                    <li><a class="white-text" href="TP1.html">TP 1 Création et manipulation d'une BD</a></li>
+                    <li><a class="white-text" href="TP2.html">TP 2 Privilèges d'accès à la BD</a></li>
+                    <li><a class="white-text" href="TP3.html">TP 3 Dictionnaire Oracle</a></li>
+                    <li><a class="white-text" href="TP4.html">TP 4 PL SQL</a></li>
+                    <li><a class="white-text" href="TP5.html">TP 5 Triggers</a></li>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Contactez nous</h5>
+                <ul>
+                    <li><a class="white-text" href="#!">khzouroussama@gmail.com</a></li>
+                    <li><a class="white-text" href="#!">mokhtarkhiat.47@yahoo.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            Made by <a class="orange-text text-lighten-3" href="#">Khezour Mohamed Oussama</a>
+        </div>
+    </div>
+</footer>
+
+
+
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large teal waves-effect waves-light">
+        <i class="large material-icons">arrow_upward</i>
+    </a>
+</div>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="js/init.js"></script>
+
 
 </body>
 </html>

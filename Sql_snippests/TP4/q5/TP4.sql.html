@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>TP4.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #90a4ae;}
+.s1 { color: #7c4dff; font-style: italic;}
+.s2 { color: #39adb5;}
+.s3 { color: #f76d47;}
+.s4 { color: #91b859;}
+</style>
+</head>
+<body bgcolor="#fafafa">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TP4.sql</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">create or replace procedure </span><span class="s0">ajout_inter</span><span class="s2">(</span><span class="s0">numi Interventions</span><span class="s2">.</span><span class="s0">numIntervention %</span><span class="s1">type</span><span class="s2">,</span><span class="s0">numv INTERVENTIONS</span><span class="s2">.</span><span class="s0">NUMVEHICULE%</span><span class="s1">type</span><span class="s2">,</span>
+                            <span class="s0">t Interventions</span><span class="s2">.</span><span class="s0">typeIntervention%</span><span class="s1">type </span><span class="s2">,</span><span class="s0">dd Interventions</span><span class="s2">.</span><span class="s0">dateDebinterv%</span><span class="s1">type </span><span class="s2">,</span>
+                            <span class="s0">df Interventions</span><span class="s2">.</span><span class="s0">dateFininterv%</span><span class="s1">type </span><span class="s2">,</span><span class="s0">cout Interventions</span><span class="s2">.</span><span class="s0">coutInterv%</span><span class="s1">type</span><span class="s2">)</span>
+<span class="s1">AS</span>
+ cursor <span class="s0">cr1 </span><span class="s1">is select </span><span class="s0">*</span>
+                <span class="s1">from </span><span class="s0">INTERVENTIONS </span><span class="s1">I</span>
+                where <span class="s0">numi=</span><span class="s1">I</span><span class="s2">.</span><span class="s0">NUMINTERVENTION</span><span class="s2">;</span>
+ <span class="s1">cursor </span><span class="s0">cr2 </span><span class="s1">is select </span><span class="s0">*</span>
+                <span class="s1">from </span><span class="s0">VEHICULE</span>
+                <span class="s1">WHERE </span><span class="s0">NUMVEHICULE=numv</span><span class="s2">;</span>
+ <span class="s0">c1 cr1%</span><span class="s1">rowtype</span><span class="s2">;</span>
+ <span class="s0">c2 cr2%</span><span class="s1">rowtype</span><span class="s2">;</span>
+ <span class="s1">i INTEGER </span><span class="s2">;</span>
+ <span class="s0">j </span><span class="s1">INTEGER </span><span class="s2">;</span>
+<span class="s1">begin</span>
+  i<span class="s0">:=</span><span class="s3">0</span><span class="s2">;</span><span class="s0">j:=</span><span class="s3">0</span><span class="s2">;</span>
+  <span class="s1">FOR </span><span class="s0">c1 </span><span class="s1">in </span><span class="s0">cr1 </span><span class="s1">loop i</span><span class="s0">:= </span><span class="s1">i</span><span class="s0">+</span><span class="s3">1</span><span class="s2">;</span>
+  <span class="s1">end loop </span><span class="s2">;</span>
+  <span class="s1">if</span><span class="s2">(</span><span class="s1">i</span><span class="s0">=</span><span class="s3">0</span><span class="s2">)</span><span class="s1">then</span>
+    for <span class="s0">c2 </span><span class="s1">in </span><span class="s0">cr2 </span><span class="s1">loop </span><span class="s0">j := j+</span><span class="s3">1</span><span class="s2">;</span>
+    <span class="s1">end loop</span><span class="s2">;</span>
+    <span class="s1">if</span><span class="s2">(</span><span class="s0">j=</span><span class="s3">1</span><span class="s2">)</span><span class="s1">then</span>
+        insert into <span class="s0">INTERVENTIONS </span><span class="s1">values</span><span class="s2">(</span><span class="s0">numi</span><span class="s2">,</span><span class="s0">numv</span><span class="s2">,</span><span class="s0">t</span><span class="s2">,</span><span class="s0">dd</span><span class="s2">,</span><span class="s0">df</span><span class="s2">,</span><span class="s0">cout</span><span class="s2">);</span>
+        <span class="s0">dbms_output</span><span class="s2">.</span><span class="s0">put_line</span><span class="s2">(</span><span class="s4">'Intervention ajouté ! '</span><span class="s2">);</span>
+    <span class="s1">else</span>
+        <span class="s0">dbms_output</span><span class="s2">.</span><span class="s0">put_line</span><span class="s2">(</span><span class="s4">'ERREUR : violation de la clé étrangère'</span><span class="s2">);</span>
+    <span class="s1">end if</span><span class="s2">;</span>
+  <span class="s1">else</span>
+        <span class="s0">dbms_output</span><span class="s2">.</span><span class="s0">put_line</span><span class="s2">(</span><span class="s4">'ERREUR : violation de la clé primaire'</span><span class="s2">);</span>
+  <span class="s1">end if </span><span class="s2">;</span>
+<span class="s1">end </span><span class="s2">;</span>
+<span class="s2">/</span>
+
+<span class="s1">execute </span><span class="s0">ajout_inter</span><span class="s2">(</span><span class="s3">1</span><span class="s2">,</span><span class="s3">3</span><span class="s2">,</span><span class="s4">'réparation'</span><span class="s2">,</span><span class="s0">to_date</span><span class="s2">(</span><span class="s4">'2006/02/25 09:00:00'</span><span class="s2">,</span><span class="s4">'YYYY-MM-DD HH24:MI:SS' </span><span class="s2">),</span>
+                    <span class="s0">to_date</span><span class="s2">(</span><span class="s4">'2006/02/26 12:00:00'</span><span class="s2">,</span><span class="s4">'YYYY-MM-DD HH24:MI:SS'</span><span class="s2">),</span><span class="s3">30000</span><span class="s2">);</span>
+<span class="s1">execute </span><span class="s0">ajout_inter</span><span class="s2">(</span><span class="s3">1</span><span class="s2">,</span><span class="s3">30</span><span class="s2">,</span><span class="s4">'réparation'</span><span class="s2">,</span><span class="s0">to_date</span><span class="s2">(</span><span class="s4">'2006/02/25 09:00:00'</span><span class="s2">,</span><span class="s4">'YYYY-MM-DD HH24:MI:SS' </span><span class="s2">),</span>
+                     <span class="s0">to_date</span><span class="s2">(</span><span class="s4">'2006/02/26 12:00:00'</span><span class="s2">,</span><span class="s4">'YYYY-MM-DD HH24:MI:SS'</span><span class="s2">),</span><span class="s3">30000</span><span class="s2">);</span>
+<span class="s1">execute </span><span class="s0">ajout_inter</span><span class="s2">(</span><span class="s3">13</span><span class="s2">,</span><span class="s3">11</span><span class="s2">,</span><span class="s4">'réparation'</span><span class="s2">,</span><span class="s0">to_date</span><span class="s2">(</span><span class="s4">'2006/02/25 09:00:00'</span><span class="s2">,</span><span class="s4">'YYYY-MM-DD HH24:MI:SS' </span><span class="s2">),</span>
+                    <span class="s0">to_date</span><span class="s2">(</span><span class="s4">'2006/02/26 12:00:00'</span><span class="s2">,</span><span class="s4">'YYYY-MM-DD HH24:MI:SS'</span><span class="s2">),</span><span class="s3">30000</span><span class="s2">);</span>
+
+
+
+</pre>
+</body>
+</html>

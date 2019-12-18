@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>TP3.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7c4dff; font-style: italic;}
+.s1 { color: #90a4ae;}
+.s2 { color: #91b859;}
+.s3 { color: #f76d47;}
+.s4 { color: #39adb5;}
+</style>
+</head>
+<body bgcolor="#fafafa">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TP3.sql</font>
+</center></td></tr></table>
+<pre><span class="s0">CREATE TABLESPACE </span><span class="s1">ttp3_TBS</span>
+  <span class="s0">DATAFILE </span><span class="s2">'G:\BDD\tables\tbs_INTERVENTION1.dat'</span>
+  <span class="s0">SIZE </span><span class="s3">50</span><span class="s1">m </span><span class="s0">AUTOEXTEND on online </span><span class="s4">;</span>
+
+<span class="s0">CREATE TEMPORARY TABLESPACE </span><span class="s1">ttp3_TempTBS</span>
+  <span class="s0">TEMPFILE </span><span class="s2">'G:\BDD\tables\temp_INTERVENTION1.dat'</span>
+  <span class="s0">SIZE </span><span class="s3">50</span><span class="s1">M </span><span class="s0">AUTOEXTEND ON </span><span class="s4">;</span></pre>
+</body>
+</html>

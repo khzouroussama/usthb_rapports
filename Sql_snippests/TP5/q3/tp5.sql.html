@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>TP5.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7c4dff; font-style: italic;}
+.s1 { color: #90a4ae;}
+.s2 { color: #39adb5;}
+.s3 { color: #f76d47;}
+.s4 { color: #91b859;}
+</style>
+</head>
+<body bgcolor="#fafafa">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TP5.sql</font>
+</center></td></tr></table>
+<pre><span class="s0">CREATE OR REPLACE TRIGGER </span><span class="s1">MODEFIE_SALAIRE</span>
+<span class="s0">BEFORE UPDATE ON </span><span class="s1">EMPLOYE</span>
+<span class="s0">FOR EACH ROW</span>
+
+ BEGIN
+
+   IF <span class="s2">(</span><span class="s1">:</span><span class="s0">old</span><span class="s2">.</span><span class="s1">SALAIREPLOYE &gt; :</span><span class="s0">new</span><span class="s2">.</span><span class="s1">SALAIREPLOYE</span><span class="s2">) </span><span class="s0">then</span>
+    <span class="s1">rise_application-</span><span class="s0">error</span><span class="s2">(</span><span class="s1">-</span><span class="s3">20550</span><span class="s2">,</span><span class="s4">'Attention, le nouveau salaire est inferieur à l ancien salaire.'</span><span class="s2">);</span>
+   <span class="s0">end IF</span><span class="s2">;</span>
+
+ <span class="s0">END</span><span class="s2">;</span>
+
+ <span class="s1">/</span></pre>
+</body>
+</html>

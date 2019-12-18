@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>TP2.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #aabfc9; font-style: italic;}
+.s1 { color: #90a4ae;}
+.s2 { color: #7c4dff; font-style: italic;}
+.s3 { color: #91b859;}
+.s4 { color: #f76d47;}
+.s5 { color: #39adb5;}
+</style>
+</head>
+<body bgcolor="#fafafa">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TP2.sql</font>
+</center></td></tr></table>
+<pre><span class="s0">/* Création de la tablespace */</span>
+<span class="s2">CREATE TABLESPACE </span><span class="s1">TP2_tps</span>
+  <span class="s2">DATAFILE </span><span class="s3">'C:\tp2_tps.dat'</span>
+  <span class="s2">SIZE </span><span class="s4">50 </span><span class="s1">m</span>
+  <span class="s2">AUTOEXTEND ON ONLINE </span><span class="s5">;</span>
+<span class="s0">/* Création de la tablespace temporaire */</span>
+<span class="s2">CREATE TEMPORARY TABLESPACE </span><span class="s1">TP2_temp</span>
+  <span class="s2">TEMPFILE </span><span class="s3">'C:\tp2_temp.dat'</span>
+  <span class="s2">SIZE </span><span class="s4">50 </span><span class="s1">m</span>
+  <span class="s2">AUTOEXTEND ON </span><span class="s5">;</span>
+<span class="s0">/*Création du nouvel utilisateur*/</span>
+<span class="s2">CREATE USER ADMIN</span>
+  IDENTIFIED BY <span class="s4">0000</span>
+   <span class="s2">DEFAULT TABLESPACE </span><span class="s1">TP2_tps</span>
+    <span class="s2">TEMPORARY TABLESPACE </span><span class="s1">TP2_temp </span><span class="s5">;</span></pre>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>console.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7c4dff; font-style: italic;}
+.s1 { color: #90a4ae;}
+.s2 { color: #39adb5;}
+.s3 { color: #aabfc9; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#fafafa">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+console.sql</font>
+</center></td></tr></table>
+<pre><span class="s0">CREATE ROLE </span><span class="s1">gestionnaire_des_interventions</span><span class="s2">;</span>
+<span class="s0">GRANT SELECT ON </span><span class="s1">EMPLOYE</span>
+  <span class="s0">TO </span><span class="s1">gestionnaire_des_interventions </span><span class="s2">;</span>
+<span class="s0">GRANT SELECT ON </span><span class="s1">VEHICULE</span>
+  <span class="s0">TO </span><span class="s1">gestionnaire_des_interventions </span><span class="s2">;</span>
+<span class="s0">GRANT SELECT ON CLIENT</span>
+  TO <span class="s1">gestionnaire_des_interventions </span><span class="s2">;</span>
+<span class="s0">GRANT UPDATE ON </span><span class="s1">INTERVENTIONS</span>
+  <span class="s0">TO </span><span class="s1">gestionnaire_des_interventions </span><span class="s2">;</span>
+<span class="s0">GRANT UPDATE ON </span><span class="s1">INTERVENANTS</span>
+  <span class="s0">TO </span><span class="s1">gestionnaire_des_interventions </span><span class="s2">;</span></pre>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>TP5.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #90a4ae;}
+.s1 { color: #7c4dff; font-style: italic;}
+.s2 { color: #39adb5;}
+.s3 { color: #91b859;}
+.s4 { color: #f76d47;}
+</style>
+</head>
+<body bgcolor="#fafafa">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TP5.sql</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">CREATE OR REPLACE TRIGGER </span><span class="s0">VEREFIE_PER</span>
+<span class="s1">BEFORE INSERT OR UPDATE OF </span><span class="s0">DATEDEBUT</span><span class="s2">,</span><span class="s0">DATEFIN </span><span class="s1">ON </span><span class="s0">Intervenants</span>
+<span class="s1">FOR EACH ROW</span>
+DECLARE
+  <span class="s0">ROM INTERVENTIONS%</span><span class="s1">ROWTYPE</span><span class="s2">;</span>
+<span class="s1">BEGIN</span>
+IF<span class="s2">(</span><span class="s1">INSERTING</span><span class="s2">) </span><span class="s1">THEN</span>
+  SELECT <span class="s0">* </span><span class="s1">INTO </span><span class="s0">ROM </span><span class="s1">FROM </span><span class="s0">INTERVENTIONS </span><span class="s1">WHERE </span><span class="s0">NUMINTERVENTION =:</span><span class="s1">NEW</span><span class="s2">.</span><span class="s0">NUMINTERVENTION</span><span class="s2">;</span>
+  	<span class="s1">IF</span><span class="s2">((</span><span class="s0">ROM</span><span class="s2">.</span><span class="s0">DATEDEBINTERV &lt;= :</span><span class="s1">NEW</span><span class="s2">.</span><span class="s0">DATEDEBUT</span><span class="s2">) </span><span class="s1">AND </span><span class="s2">(</span><span class="s0">ROM</span><span class="s2">.</span><span class="s0">DATEFININTERV&gt;= :</span><span class="s1">NEW</span><span class="s2">.</span><span class="s0">DATEFIN </span><span class="s2">))</span>
+  	  <span class="s1">THEN </span><span class="s0">DBMS_OUTPUT</span><span class="s2">.</span><span class="s0">PUT_LINE</span><span class="s2">(</span><span class="s3">'PERIODE VALIDE'</span><span class="s2">);</span>
+
+  	<span class="s1">ELSE </span><span class="s0">RAISE_APPLICATION_ERROR</span><span class="s2">(</span><span class="s0">-</span><span class="s4">20658</span><span class="s2">,</span><span class="s3">'PERIODE INVALIDE '</span><span class="s2">);</span>
+  	<span class="s1">END IF</span><span class="s2">;</span>
+
+<span class="s1">ELSE SELECT </span><span class="s0">* </span><span class="s1">INTO </span><span class="s0">ROM </span><span class="s1">FROM </span><span class="s0">INTERVENTIONS </span><span class="s1">WHERE </span><span class="s0">NUMINTERVENTION= :</span><span class="s1">NEW</span><span class="s2">.</span><span class="s0">NUMINTERVENTION</span><span class="s2">;</span>
+ 	<span class="s1">IF</span><span class="s2">((</span><span class="s0">ROM</span><span class="s2">.</span><span class="s0">DATEDEBINTERV &lt;= :</span><span class="s1">NEW</span><span class="s2">.</span><span class="s0">DATEDEBUT</span><span class="s2">) </span><span class="s1">AND </span><span class="s2">(</span><span class="s0">ROM</span><span class="s2">.</span><span class="s0">DATEFININTERV&gt;= :</span><span class="s1">NEW</span><span class="s2">.</span><span class="s0">DATEFIN </span><span class="s2">))</span>
+ 	  <span class="s1">THEN </span><span class="s0">DBMS_OUTPUT</span><span class="s2">.</span><span class="s0">PUT_LINE</span><span class="s2">(</span><span class="s3">'PERIODE VALIDE'</span><span class="s2">);</span>
+
+ 	<span class="s1">ELSE </span><span class="s0">RAISE_APPLICATION_ERROR</span><span class="s2">(</span><span class="s0">-</span><span class="s4">20658</span><span class="s2">,</span><span class="s3">'PERIODE INVALIDE'</span><span class="s2">);</span>
+ 	<span class="s1">END IF</span><span class="s2">;</span>
+<span class="s1">END IF</span><span class="s2">;</span>
+
+<span class="s1">END</span><span class="s2">;</span>
+<span class="s0">/</span></pre>
+</body>
+</html>

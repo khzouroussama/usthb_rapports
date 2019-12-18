@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>TP4.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7c4dff; font-style: italic;}
+.s1 { color: #90a4ae;}
+.s2 { color: #39adb5;}
+.s3 { color: #91b859;}
+.s4 { color: #f76d47;}
+</style>
+</head>
+<body bgcolor="#fafafa">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TP4.sql</font>
+</center></td></tr></table>
+<pre><span class="s0">create or replace procedure </span><span class="s1">Verification</span><span class="s2">(</span><span class="s1">ANN VEHICULE</span><span class="s2">.</span><span class="s1">ANNEE%</span><span class="s0">type</span><span class="s2">)</span>
+<span class="s0">AS</span>
+  cursor <span class="s1">cr </span><span class="s0">is select </span><span class="s1">v</span><span class="s2">.</span><span class="s1">ANNEE</span><span class="s2">, </span><span class="s1">V</span><span class="s2">.</span><span class="s1">NUMVEHICULE</span><span class="s2">, </span><span class="s0">i</span><span class="s2">.</span><span class="s1">DATEDEBINTERV</span><span class="s2">, </span><span class="s0">i</span><span class="s2">.</span><span class="s1">DATEFININTERV</span>
+               <span class="s0">from </span><span class="s1">VEHICULE v</span><span class="s2">,</span>
+                    <span class="s1">INTERVENTIONS </span><span class="s0">i</span>
+               where <span class="s1">v</span><span class="s2">.</span><span class="s1">ANNEE = ANN</span>
+                 <span class="s0">AND i</span><span class="s2">.</span><span class="s1">NUMVEHICULE = v</span><span class="s2">.</span><span class="s1">NUMVEHICULE</span><span class="s2">;</span>
+  <span class="s0">c </span><span class="s1">cr%</span><span class="s0">rowtype</span><span class="s2">;</span>
+  <span class="s1">vide </span><span class="s0">EXCEPTION</span><span class="s2">;</span>
+<span class="s0">BEGIN</span>
+  FOR c in <span class="s1">cr</span>
+    <span class="s0">loop</span>
+      if <span class="s2">(</span><span class="s0">c</span><span class="s2">.</span><span class="s1">DATEDEBINTERV &lt;= </span><span class="s0">c</span><span class="s2">.</span><span class="s1">DATEFININTERV</span><span class="s2">)</span>
+      <span class="s0">then</span>
+        <span class="s1">DBMS_OUTPUT</span><span class="s2">.</span><span class="s1">PUT_LINE</span><span class="s2">(</span><span class="s3">' </span><span class="s1">vérification </span><span class="s0">positive </span><span class="s1">pour </span><span class="s0">le </span><span class="s1">vehicule</span><span class="s3">'</span><span class="s1">||</span><span class="s0">c</span><span class="s2">.</span><span class="s1">NUMVEHICULE</span><span class="s2">);</span>
+      <span class="s0">else</span>
+        <span class="s1">DBMS_OUTPUT</span><span class="s2">.</span><span class="s1">PUT_LINE</span><span class="s2">(</span><span class="s3">' </span><span class="s1">vérification negative pour </span><span class="s0">le </span><span class="s1">vehicule</span><span class="s3">'</span><span class="s1">||</span><span class="s0">c</span><span class="s2">.</span><span class="s1">NUMVEHICULE</span><span class="s2">);</span>
+      <span class="s0">end if</span><span class="s2">;</span>
+    <span class="s0">end loop</span><span class="s2">;</span>
+<span class="s0">EXCEPTION</span>
+  when <span class="s1">vide </span><span class="s0">then</span>
+    <span class="s1">dbms_output</span><span class="s2">.</span><span class="s1">put_line</span><span class="s2">(</span><span class="s3">'</span><span class="s1">Aucun vehicule trouvé</span><span class="s3">'</span><span class="s2">);</span>
+<span class="s0">END</span><span class="s2">;</span>
+<span class="s1">/</span>
+
+<span class="s0">EXECUTE </span><span class="s1">Verification</span><span class="s2">(</span><span class="s4">1998</span><span class="s2">);</span></pre>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>TP5.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7c4dff; font-style: italic;}
+.s1 { color: #90a4ae;}
+.s2 { color: #39adb5;}
+.s3 { color: #91b859;}
+</style>
+</head>
+<body bgcolor="#fafafa">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TP5.sql</font>
+</center></td></tr></table>
+<pre><span class="s0">CREATE OR REPLACE TRIGGER </span><span class="s1">MODELE_AJOUTE</span>
+<span class="s0">AFTER INSERT ON </span><span class="s1">MODELE </span>
+<span class="s0">FOR EACH ROW</span>
+
+DECLARE <span class="s1">marq MARQUE</span><span class="s2">.</span><span class="s1">MARQUE%</span><span class="s0">type </span><span class="s2">;</span>
+
+<span class="s0">BEGIN</span>
+ 
+  select <span class="s1">marque </span><span class="s0">into </span><span class="s1">marq</span>
+  <span class="s0">from </span><span class="s1">marque </span>
+  <span class="s0">where  </span><span class="s1">NUMMARQUE = :</span><span class="s0">new</span><span class="s2">.</span><span class="s1">NUMMARQUE </span><span class="s2">; </span>
+ <span class="s1">DBMS_output</span><span class="s2">.</span><span class="s1">put_line </span>
+   <span class="s2">(</span><span class="s3">'Un nouveau modèle est ajouté à la marque' </span><span class="s1">|| marq</span><span class="s2">);</span>
+
+ <span class="s0">END</span><span class="s2">;</span>
+ <span class="s1">/</span></pre>
+</body>
+</html>

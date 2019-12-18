@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>TP4.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #90a4ae;}
+.s1 { color: #7c4dff; font-style: italic;}
+.s2 { color: #39adb5;}
+.s3 { color: #91b859;}
+.s4 { color: #f76d47;}
+</style>
+</head>
+<body bgcolor="#fafafa">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TP4.sql</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">create or replace FUNCTION </span><span class="s0">nombre_intervention</span><span class="s2">(</span><span class="s0">emp </span><span class="s1">in </span><span class="s0">EMPLOYE</span><span class="s2">.</span><span class="s0">NUMEMPLOYE%</span><span class="s1">type</span><span class="s2">)</span>
+<span class="s1">RETURN NUMBER</span>
+IS
+cursor <span class="s0">cr </span><span class="s1">is select I</span><span class="s2">.</span><span class="s0">numEmploye</span><span class="s2">, </span><span class="s0">E</span><span class="s2">.</span><span class="s0">nomEmploye </span><span class="s2">, </span><span class="s0">E</span><span class="s2">.</span><span class="s0">prenomEmploye</span><span class="s2">, </span><span class="s0">COUNT</span><span class="s2">(</span><span class="s0">*</span><span class="s2">) </span><span class="s1">as </span><span class="s0">nbr</span>
+            <span class="s1">from </span><span class="s0">INTERVENANTS </span><span class="s1">I</span><span class="s2">,</span><span class="s0">EMPLOYE E</span>
+            <span class="s1">where </span><span class="s0">E</span><span class="s2">.</span><span class="s0">numEmploye=emp</span>
+            <span class="s1">AND I</span><span class="s2">.</span><span class="s0">NUMEMPLOYE=E</span><span class="s2">.</span><span class="s0">NUMEMPLOYE</span>
+            <span class="s1">group by I</span><span class="s2">.</span><span class="s0">numEmploye</span><span class="s2">, </span><span class="s0">E</span><span class="s2">.</span><span class="s0">nomEmploye</span><span class="s2">, </span><span class="s0">E</span><span class="s2">.</span><span class="s0">prenomEmploye</span><span class="s2">;</span>
+   <span class="s1">c </span><span class="s0">cr%</span><span class="s1">rowtype </span><span class="s2">;</span>
+    <span class="s0">vide </span><span class="s1">EXCEPTION</span><span class="s2">;</span>
+<span class="s1">begin</span>
+    FOR C IN <span class="s0">cr </span><span class="s1">loop</span>
+    <span class="s0">DBMS_OUTPUT</span><span class="s2">.</span><span class="s0">PUT_LINE</span>
+    <span class="s2">(</span><span class="s3">'L emplyé : '</span><span class="s0">||</span><span class="s1">c</span><span class="s2">.</span><span class="s0">nomEmploye|| </span><span class="s3">' ' </span><span class="s0">||</span><span class="s1">c</span><span class="s2">.</span><span class="s0">prenomEmploye||</span><span class="s3">' a fait '</span><span class="s0">||</span><span class="s1">c</span><span class="s2">.</span><span class="s0">NBR||</span><span class="s3">' inteventions.'</span><span class="s2">);</span>
+    <span class="s1">RETURN</span><span class="s2">(</span><span class="s1">c</span><span class="s2">.</span><span class="s0">nbr</span><span class="s2">);</span>
+    <span class="s1">end loop</span><span class="s2">;</span>
+   <span class="s1">EXCEPTION when </span><span class="s0">vide </span><span class="s1">then</span>
+    <span class="s0">dbms_output</span><span class="s2">.</span><span class="s0">put_line</span><span class="s2">(</span><span class="s3">'Aucun employe trouvé'</span><span class="s2">);</span>
+<span class="s1">end</span><span class="s2">;</span>
+<span class="s3">/  </span>
+<span class="s1">select </span><span class="s0">nombre_intervention</span><span class="s2">(</span><span class="s4">59 </span><span class="s2">) </span><span class="s1">from </span><span class="s0">dual</span><span class="s2">;</span></pre>
+</body>
+</html>

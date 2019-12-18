@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>TP5.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #90a4ae;}
+.s1 { color: #7c4dff; font-style: italic;}
+.s2 { color: #39adb5;}
+.s3 { color: #f76d47;}
+.s4 { color: #91b859;}
+</style>
+</head>
+<body bgcolor="#fafafa">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TP5.sql</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">Create or replace trigger </span><span class="s0">TOT_GAI</span>
+<span class="s1">after insert on </span><span class="s0">interventions</span>
+<span class="s1">For each row</span>
+DECLARE
+
+CURSOR <span class="s0">MOIS_ANNEE </span><span class="s1">IS SELECT </span><span class="s0">Mois</span><span class="s2">,</span><span class="s0">Annee </span><span class="s1">FROM </span><span class="s0">CHIFFRE_AFFAIRE</span><span class="s2">;</span>
+<span class="s0">D MOIS_ANNEE%</span><span class="s1">Rowtype </span><span class="s2">;</span><span class="s1">i binary_integer</span><span class="s2">;</span>
+<span class="s0">DAT interventions</span><span class="s2">.</span><span class="s0">dateDebinterv%</span><span class="s1">type</span><span class="s2">; </span><span class="s0">CA_MOIS CHIFFRE_AFFAIRE</span><span class="s2">.</span><span class="s0">Mois%</span><span class="s1">type</span><span class="s2">;</span>
+<span class="s0">CA_ANNEE CHIFFRE_AFFAIRE</span><span class="s2">.</span><span class="s0">Annee%</span><span class="s1">type</span><span class="s2">;</span>
+<span class="s1">BEGIN</span>
+<span class="s0">DAT := :</span><span class="s1">new</span><span class="s2">.</span><span class="s0">dateDebinterv</span><span class="s2">;</span>
+<span class="s0">CA_MOIS := EXTRACT</span><span class="s2">(</span><span class="s1">MONTH FROM </span><span class="s0">dat</span><span class="s2">);</span><span class="s0">CA_ANNEE := EXTRACT</span><span class="s2">(</span><span class="s1">YEAR FROM </span><span class="s0">dat</span><span class="s2">);</span>
+<span class="s1">i</span><span class="s0">:=</span><span class="s3">0</span><span class="s2">;</span>
+<span class="s1">for </span><span class="s0">D </span><span class="s1">in </span><span class="s0">MOIS_ANNEE </span><span class="s1">loop</span>
+ 	if<span class="s2">(</span><span class="s0">D</span><span class="s2">.</span><span class="s0">Mois= CA_ANNEE </span><span class="s1">and </span><span class="s0">D</span><span class="s2">.</span><span class="s0">Annee= CA_MOIS</span><span class="s2">)</span><span class="s1">then i</span><span class="s0">:=</span><span class="s1">i</span><span class="s0">+</span><span class="s3">1</span><span class="s2">;</span>
+ 	<span class="s1">end if</span><span class="s2">;</span>
+<span class="s1">end loop</span><span class="s2">;</span>
+<span class="s1">if</span><span class="s2">(</span><span class="s1">i</span><span class="s0">=</span><span class="s3">1</span><span class="s2">)</span><span class="s1">then</span>
+ 	update <span class="s0">CHIFFRE_AFFAIRE </span><span class="s1">set </span><span class="s0">TOTAL_GAIN= TOTAL_GAIN +:</span><span class="s1">new</span><span class="s2">.</span><span class="s0">coutInterv </span><span class="s1">where </span><span class="s0">Mois=CA_MOIS </span><span class="s1">and </span><span class="s0">Annee= CA_ANNEE</span><span class="s2">;</span>
+    <span class="s0">dbms_output</span><span class="s2">.</span><span class="s0">put_line</span><span class="s2">(</span><span class="s4">'une ligne dans la table CHIFFRE_AFFAIRE est modifiée'</span><span class="s2">);</span>
+<span class="s1">else</span>
+ 	insert into <span class="s0">CHIFFRE_AFFAIRE </span><span class="s1">values</span><span class="s2">(</span><span class="s0">CA_MOIS</span><span class="s2">, </span><span class="s0">CA_ANNEE</span><span class="s2">,</span><span class="s0">:</span><span class="s1">new</span><span class="s2">.</span><span class="s0">coutInterv </span><span class="s2">);</span>
+ 	<span class="s0">dbms_output</span><span class="s2">.</span><span class="s0">put_line</span><span class="s2">(</span><span class="s4">'une ligne dans la table chiffre_aff ajouté'</span><span class="s2">);</span>
+<span class="s1">end if</span><span class="s2">;</span>
+<span class="s1">END</span><span class="s2">;</span>
+<span class="s0">/</span></pre>
+</body>
+</html>

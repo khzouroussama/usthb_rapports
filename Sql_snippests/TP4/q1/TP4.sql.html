@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>TP4.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7c4dff; font-style: italic;}
+.s1 { color: #90a4ae;}
+.s2 { color: #39adb5;}
+.s3 { color: #91b859;}
+</style>
+</head>
+<body bgcolor="#fafafa">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TP4.sql</font>
+</center></td></tr></table>
+<pre><span class="s0">set serveroutput on </span><span class="s2">;</span>
+
+<span class="s0">DECLARE</span>
+cursor <span class="s1">cr </span><span class="s0">is SELECT </span><span class="s1">marque </span><span class="s2">, </span><span class="s1">COUNT</span><span class="s2">(</span><span class="s1">*</span><span class="s2">) </span><span class="s0">AS </span><span class="s1">nbr</span>
+        <span class="s0">FROM </span><span class="s1">MARQUE MA</span><span class="s2">, </span><span class="s1">MODELE MO</span>
+        <span class="s0">WHERE </span><span class="s1">MA</span><span class="s2">.</span><span class="s1">NUMMARQUE = MO</span><span class="s2">.</span><span class="s1">NUMMARQUE</span>
+        <span class="s0">GROUP BY </span><span class="s1">MA</span><span class="s2">.</span><span class="s1">MARQUE </span><span class="s2">;</span>
+<span class="s0">c </span><span class="s1">cr%</span><span class="s0">rowtype</span><span class="s2">;</span>
+<span class="s1">vide </span><span class="s0">exception</span><span class="s2">;</span>
+<span class="s0">BEGIN</span>
+for c in <span class="s1">cr </span><span class="s0">LOOP</span>
+ <span class="s1">dbms_output</span><span class="s2">.</span><span class="s1">put_line</span><span class="s2">(</span><span class="s3">'La marque : '</span><span class="s1">|| </span><span class="s0">c</span><span class="s2">.</span><span class="s1">marque || </span><span class="s3">' posséde ' </span><span class="s1">|| </span><span class="s0">c</span><span class="s2">.</span><span class="s1">nbr || </span><span class="s3">' modeles .' </span><span class="s2">);</span>
+ <span class="s0">exit when </span><span class="s1">cr%</span><span class="s0">notfound</span><span class="s2">;</span>
+<span class="s0">END LOOP</span><span class="s2">;</span>
+<span class="s0">EXCEPTION WHEN </span><span class="s1">vide </span><span class="s0">THEN</span>
+ <span class="s1">dbms_output</span><span class="s2">.</span><span class="s1">put_line</span><span class="s2">(</span><span class="s3">'Aucune marque n est trouvé ! '</span><span class="s2">);</span>
+<span class="s0">END</span><span class="s2">;</span>
+<span class="s1">/</span></pre>
+</body>
+</html>

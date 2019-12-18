@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>TP5.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #90a4ae;}
+.s1 { color: #7c4dff; font-style: italic;}
+.s2 { color: #39adb5;}
+.s3 { color: #91b859;}
+</style>
+</head>
+<body bgcolor="#fafafa">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TP5.sql</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">CREATE OR REPLACE TRIGGER </span><span class="s0">MIS_A_JOUR_CLIENT</span>
+<span class="s1">AFTER INSERT OR UPDATE OR DELETE ON CLIENT</span>
+FOR EACH ROW
+
+ BEGIN 
+
+   IF INSERTING THEN
+   <span class="s0">DBMS_output</span><span class="s2">.</span><span class="s0">put_line </span><span class="s2">(</span><span class="s3">'un nouvel client a été ajouté'</span><span class="s2">);</span>
+     <span class="s1">END IF</span><span class="s2">;</span>
+  <span class="s1">IF UPDATING THEN</span>
+   <span class="s0">DBMS_output</span><span class="s2">.</span><span class="s0">put_line </span><span class="s2">(</span><span class="s3">'un client a été mis à jour'</span><span class="s2">);</span>
+     <span class="s1">END IF</span><span class="s2">;</span>
+  <span class="s1">IF DELETING THEN</span>
+   <span class="s0">DBMS_output</span><span class="s2">.</span><span class="s0">put_line </span><span class="s2">(</span><span class="s3">'le client a été supprimé'</span><span class="s2">);</span>
+     <span class="s1">END IF</span><span class="s2">;</span>
+<span class="s1">END</span><span class="s2">;</span>
+<span class="s0">/</span></pre>
+</body>
+</html>

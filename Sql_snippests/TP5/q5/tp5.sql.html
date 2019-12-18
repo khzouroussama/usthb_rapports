@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>TP5.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7c4dff; font-style: italic;}
+.s1 { color: #90a4ae;}
+.s2 { color: #39adb5;}
+.s3 { color: #f76d47;}
+</style>
+</head>
+<body bgcolor="#fafafa">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TP5.sql</font>
+</center></td></tr></table>
+<pre><span class="s0">ALTER TABLE </span><span class="s1">EMPLOYE </span><span class="s0">ADD </span><span class="s2">(</span><span class="s1">TOTAL_INTERVENTIONS </span><span class="s0">INTEGER DEFAULT </span><span class="s3">0</span><span class="s2">);</span>
+
+<span class="s0">CREATE OR REPLACE TRIGGER </span><span class="s1">NUMBER_inter</span>
+<span class="s0">AFTER INSERT ON </span><span class="s1">INTERVENANTS</span>
+<span class="s0">FOR EACH ROW</span>
+
+BEGIN
+
+  UPDATE <span class="s1">EMPLOYE E</span>
+  <span class="s0">SET </span><span class="s1">TOTAL_INTERVENTIONS = TOTAL_INTERVENTIONS + </span><span class="s3">1</span>
+  <span class="s0">WHERE </span><span class="s1">E</span><span class="s2">.</span><span class="s1">numEmploye = :</span><span class="s0">NEW</span><span class="s2">.</span><span class="s1">numEmploye </span><span class="s2">;</span>
+
+<span class="s0">END</span><span class="s2">;</span>
+<span class="s1">/</span></pre>
+</body>
+</html>

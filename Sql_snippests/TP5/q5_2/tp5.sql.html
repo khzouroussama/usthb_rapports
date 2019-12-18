@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>TP5.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7c4dff; font-style: italic;}
+.s1 { color: #90a4ae;}
+.s2 { color: #39adb5;}
+.s3 { color: #f76d47;}
+</style>
+</head>
+<body bgcolor="#fafafa">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TP5.sql</font>
+</center></td></tr></table>
+<pre><span class="s0">DECLARE</span>
+  CURSOR <span class="s1">EMP </span><span class="s0">IS</span>
+  SELECT <span class="s1">NUMEMPLOYE </span><span class="s0">from </span><span class="s1">INTERVENANTS</span><span class="s2">;</span>
+  <span class="s0">NUM </span><span class="s1">EMPLOYE</span><span class="s2">.</span><span class="s1">NUMEMPLOYE%</span><span class="s0">type </span><span class="s2">;</span>
+
+<span class="s0">BEGIN</span>
+	OPEN <span class="s1">EMP </span><span class="s2">;</span>
+	<span class="s0">LOOP</span>
+	  FETCH <span class="s1">EMP </span><span class="s0">INTO NUM </span><span class="s2">;</span>
+	  <span class="s0">EXIT WHEN </span><span class="s1">EMP%</span><span class="s0">notfound</span><span class="s2">;</span>
+
+	  <span class="s0">UPDATE </span><span class="s1">EMPLOYE e </span>
+	  <span class="s0">SET </span><span class="s1">TOTAL_INTERVENTIONS = TOTAL_INTERVENTIONS + </span><span class="s3">1 </span>
+	  <span class="s0">where </span><span class="s1">e</span><span class="s2">.</span><span class="s1">NUMEMPLOYE = </span><span class="s0">NUM </span><span class="s2">;</span>
+	<span class="s0">end loop</span><span class="s2">;</span>
+	<span class="s0">CLOSE </span><span class="s1">EMP </span><span class="s2">;</span>
+<span class="s0">end</span><span class="s2">;</span>
+<span class="s1">/</span></pre>
+</body>
+</html>
