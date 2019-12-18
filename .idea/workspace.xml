@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d76107eb-b46b-416d-8c5a-0e22b9969311" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2.html" beforeDir="false" afterPath="$PROJECT_DIR$/TP2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TP3.html" beforeDir="false" afterPath="$PROJECT_DIR$/TP3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP4.html" beforeDir="false" afterPath="$PROJECT_DIR$/TP4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP5.html" beforeDir="false" afterPath="$PROJECT_DIR$/TP5.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1576241604826</updated>
       <workItem from="1576241606316" duration="864000" />
-      <workItem from="1576709679644" duration="1331000" />
+      <workItem from="1576709679644" duration="1530000" />
     </task>
     <task id="LOCAL-00001" summary="from idea">
       <created>1576241693925</created>
@@ -88,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576710955941</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="pre-final-fix">
+      <created>1576711016581</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1576711016581</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
